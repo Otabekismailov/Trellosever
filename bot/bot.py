@@ -1,11 +1,12 @@
 import telebot
+import trello
 from environs import Env
-
-import messages
-from trello import TrelloManager
-from utils import write_chat_to_csv, check_chat_id_from_csv, get_trello_username_by_chat_id, get_member_tasks_message
-from keyboards import get_boards_btn, get_lists_btn
-
+from trello import TrelloApi
+from message import messages
+from Trello.trello import TrelloManager
+from utils.utils import write_chat_to_csv, check_chat_id_from_csv, get_trello_username_by_chat_id, \
+    get_member_tasks_message
+from Keyboards.keyboards import get_boards_btn, get_lists_btn
 env = Env()
 env.read_env()
 
@@ -22,6 +23,7 @@ def welcome(message):
 
 @bot.message_handler(commands=["register"])
 def register_handler(message):
+    print(message.text)
     if not check_chat_id_from_csv("chats.csv", message.chat.id):
         bot.send_message(message.chat.id, messages.SEND_TRELLO_USERNAME)
         bot.register_next_step_handler(message, get_trello_username)

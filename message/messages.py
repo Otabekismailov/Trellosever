@@ -5,3 +5,4 @@ ALREADY_REGISTERED = "Siz avval ro'yxatdan o'tgansiz"
 SEND_TRELLO_USERNAME = "Trello username yuboring:"
 WELCOME_MSG = "Assalomu alaykum, ro'yxatdan o'tish uchun /register"
 NO_TASKS = "Vazifalar topilmadi."
+

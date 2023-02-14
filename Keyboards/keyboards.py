@@ -1,6 +1,6 @@
 from telebot.types import ReplyKeyboardMarkup, KeyboardButton
 
-from trello import TrelloManager
+from Trello.trello import TrelloManager
 
 
 def get_boards_btn(trello_username):
